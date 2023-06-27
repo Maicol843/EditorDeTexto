@@ -3,27 +3,33 @@
 <head>
     <title>Editor de Texto Simple</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Estilo CSS-->
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
     <div class="container">
         <header>
+            <!--Titulo-->
             <div class="titulo">
                 <h1>EDITAR TEXTO</h1>
             </div>
             <nav>
                 <div class="opciones">
+                    <!--Estilo del texto-->
                     <div class="grupo">
                         <button onclick="execCmd('bold')"><b>N</b></button>
                         <button onclick="execCmd('italic')"><i>K</i></button>
                         <button onclick="execCmd('underline')"><u>S</u></button>
                     </div>
+
                     <div class="grupo">
                         <button onclick="execCmd('justifyLeft')"><i class="fas fa-align-left"></i></button>
                         <button onclick="execCmd('justifyCenter')"><i class="fas fa-align-center"></i></button>
                         <button onclick="execCmd('justifyRight')"><i class="fas fa-align-right"></i></button>
                     </div>
+                    <!--Tamaño del Texto-->
                     <div class="grupo">
                         <select id="fontsize" onchange="execCmd('fontSize', this.value)">
                             <option value="1">10</option>
@@ -34,18 +40,23 @@
                             <option value="6">32</option>
                             <option value="7">48</option>
                         </select>
+                        <!--Selección del color del texto-->
                         <input type="color" id="textcolor" onchange="execCmd('foreColor', this.value)">
                     </div>
                 </div>
                 <div class="botones">
+                    <!--Botón Descargar el contenido-->
                     <button onclick="downloadFile()" class="btn">Descargar</button>
                     <input type="file" id="file-input" style="display: none;">
+                    <!--Botón Abrir archivo-->
                     <button onclick="openFile()" class="btn">Abrir</button>
                 </div>
             </nav>
         </header>
     </div>
+    <!--Editor del texto-->
     <div id="editor" contenteditable="true"></div>
+    <!--JavaScript-->
     <script src="../js/app.js"></script>
 </body>
 </html>
