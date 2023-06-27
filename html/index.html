@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editor de Texto Simple</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="titulo">
+                <h1>EDITAR TEXTO</h1>
+            </div>
+            <nav>
+                <div class="opciones">
+                    <div class="grupo">
+                        <button onclick="execCmd('bold')"><b>N</b></button>
+                        <button onclick="execCmd('italic')"><i>K</i></button>
+                        <button onclick="execCmd('underline')"><u>S</u></button>
+                    </div>
+                    <div class="grupo">
+                        <button onclick="execCmd('justifyLeft')"><i class="fas fa-align-left"></i></button>
+                        <button onclick="execCmd('justifyCenter')"><i class="fas fa-align-center"></i></button>
+                        <button onclick="execCmd('justifyRight')"><i class="fas fa-align-right"></i></button>
+                    </div>
+                    <div class="grupo">
+                        <select id="fontsize" onchange="execCmd('fontSize', this.value)">
+                            <option value="1">10</option>
+                            <option value="2">13</option>
+                            <option value="3" selected>16</option>
+                            <option value="4">18</option>
+                            <option value="5">24</option>
+                            <option value="6">32</option>
+                            <option value="7">48</option>
+                        </select>
+                        <input type="color" id="textcolor" onchange="execCmd('foreColor', this.value)">
+                    </div>
+                </div>
+                <div class="botones">
+                    <button onclick="downloadFile()" class="btn">Descargar</button>
+                    <input type="file" id="file-input" style="display: none;">
+                    <button onclick="openFile()" class="btn">Abrir</button>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div id="editor" contenteditable="true"></div>
+    <script src="../js/app.js"></script>
+</body>
+</html>
