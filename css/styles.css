@@ -16,6 +16,7 @@ body{
 header .titulo{
     background-color: #292c36;
     text-align: center;
+    padding: 2%;
 }
 
 header nav{
